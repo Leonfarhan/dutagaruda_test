@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getSummaryBooking } from '../services/api';
 import SummaryCard from '../components/SummaryCard';
+import vectorIcon from '../assets/vector.svg';
 
 const Dashboard = () => {
   const [summaryData, setSummaryData] = useState([]);
@@ -102,7 +103,7 @@ const Dashboard = () => {
         {Object.entries(groupedData).map(([unit, rooms]) => (
           <div key={unit}>
             <div className="flex items-center mb-4">
-              <img src="src/assets/vector.svg" alt="vector-icon" className="text-gray-500 mr-2"/>
+              <img src={vectorIcon} alt="vector-icon" className="text-gray-500 mr-2"/>
               <h2 className="text-xl font-semibold text-gray-700">{unit}</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
